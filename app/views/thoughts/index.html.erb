@@ -4,7 +4,7 @@
 
 <%= form_for @thought, url: post_thought_path do |f| %>
   <%= f.text_area :deep_thought %>
-  <%= f.submit %>
+  <%= f.submit "Post Chirp" %>
 <% end %>
 
 <div class="thoughts">
@@ -14,7 +14,7 @@
       <li class="thought">
         <%= thought.deep_thought %>
         <br/>
-        On <%= thought.created_at %> by <%= thought.user.username %>
+        Posted <%= time_ago_in_words thought.created_at %> by <%= thought.user.username %>
       </li>
     <% end %>
   </ul>
