@@ -1,0 +1,16 @@
+<h1><%= @user.username %>'s Profile</h1>
+<h3>My Chirps</h3>
+
+<div class="thoughts">
+
+  <ul>
+    <% @user.thoughts.each do |thought| %>
+      <li class="thought">
+        <%= thought.deep_thought %>
+        <br/>
+        On <%= thought.created_at %> by <%= thought.user.username %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
